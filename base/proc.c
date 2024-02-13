@@ -31,13 +31,6 @@ int
 cpuid() {
   return mycpu()-cpus;
 }
-void 
-shutdown(void) 
-{
-	outw(0xB004, 0x0|0x2000);
-    outw(0x604, 0x0|0x2000);
-	return 0;
-}
 
 // Must be called with interrupts disabled to avoid the caller being
 // rescheduled between reading lapicid and running through the loop.
