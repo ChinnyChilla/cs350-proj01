@@ -97,3 +97,11 @@ sys_shutdown(void) {
     outw(0x604, 0x0|0x2000);
 	return;
 }
+
+void
+sys_exit2(int position)
+{
+  argint( 0 , &position);
+  cprintf("%d\n", position);
+  exit();
+}

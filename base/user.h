@@ -25,6 +25,7 @@ int sleep(int);
 int uptime(void);
 void shutdown(void);
 int mkdir2(char*, char*);
+int exit2(int position);
 
 // ulib.c
 int stat(char*, struct stat*);
