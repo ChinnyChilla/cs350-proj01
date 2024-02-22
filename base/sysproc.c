@@ -105,3 +105,18 @@ sys_exit2(int position)
   cprintf("%d\n", position);
   exit();
 }
+
+int
+sys_age(void) {
+	int age;
+	argint(0, &age);
+	cprintf("You have 5200 weeks in your life\n");
+	int weeksLeft = 5200 - (age * 52);
+	cprintf("That means your have %d weeks left\n", weeksLeft);
+	cprintf("Therefore you are: ");
+	if (age < 20) {
+		cprintf("young\n");
+	} else {
+		cprintf("old\n");
+	}
+}
