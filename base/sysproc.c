@@ -120,3 +120,16 @@ sys_age(void) {
 		cprintf("old\n");
 	}
 }
+
+int
+sys_shutdown2(void) {
+  char *msg;
+  if(argptr(0, (void*)&msg, sizeof(char*)) < 0){
+    return -1;
+  }
+  cprintf("Shutting Down: %s\n", msg);
+  outw(0xB004, 0x0|0x2000);
+  outw(0x604, 0x0|0x2000);
+  return 0;
+
+}
