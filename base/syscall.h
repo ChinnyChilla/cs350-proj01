@@ -25,3 +25,4 @@
 #define SYS_exit2 24
 #define SYS_age 25
 #define SYS_shutdown2 26
+#define SYS_uptime2 27

@@ -90,6 +90,26 @@ sys_uptime(void)
   return xticks;
 }
 
+uint 
+sys_uptime2(void)
+{
+  uint xticks;
+  int x;
+  argint(0, &x);
+
+  acquire(&tickslock);
+  if (x == 1) {
+    xticks = ticks;
+  } else if (x == 2) {
+    xticks = ticks / 100;
+  } else {
+    xticks = ticks / 6000;
+  }
+
+  release(&tickslock);
+  return xticks;
+}
+
 
 void
 sys_shutdown(void) {
