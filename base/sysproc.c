@@ -129,7 +129,7 @@ sys_exit2(int position)
 int
 sys_age(void) {
 	int age;
-	argint(0, &age);
+	if (argint(0, &age) < 0) return -1;
 	cprintf("You have 5200 weeks in your life\n");
 	int weeksLeft = 5200 - (age * 52);
 	cprintf("That means your have %d weeks left\n", weeksLeft);
